@@ -16,7 +16,7 @@
  * @returns {boolean}
  */
 function isInteger(n) {
-    // Ваш код
+    return Number.isInteger(n);
 }
 
 /**
@@ -28,7 +28,11 @@ function isInteger(n) {
  * @returns {number[]}
  */
 function even() {
-    // Ваш код
+    const result = []
+    for (let i = 2; i <= 20; i += 2) {
+        result.push(i);
+    }
+    return result;
 }
 
 /**
@@ -40,7 +44,13 @@ function even() {
  * @returns {number}
  */
 function sumTo(n) {
-    // Ваш код
+    let sum = 0;
+    let i = 1;
+    while (i <= n) {
+        sum += i;
+        i++
+    }
+    return sum;
 }
 
 /**
@@ -53,7 +63,8 @@ function sumTo(n) {
  * @returns {number}
  */
 function recSumTo(n) {
-    // Ваш код
+    if (n === 1) return 1;
+    return n + recSumTo(n - 1);
 }
 
 /**
@@ -65,7 +76,11 @@ function recSumTo(n) {
  * @returns {number}
  */
 function factorial(n) {
-    // Ваш код
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
 }
 
 /**
@@ -78,7 +93,7 @@ function factorial(n) {
  * @returns {boolean}
  */
 function isBinary(n) {
-    // Ваш код
+    return Number.isInteger(n) && n > 0 && (n & (n - 1)) == 0;
 }
 
 /**
@@ -92,7 +107,16 @@ function isBinary(n) {
  * @returns {number}
  */
 function fibonacci(n) {
-    // Ваш код
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+    let a = 0;
+    let b = 1;
+    for (let i = 2; i <= n; i++) {
+        const next = a + b;
+        a = b;
+        b = next;
+    }
+    return b;
 }
 
 /**
